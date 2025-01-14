@@ -40,7 +40,7 @@ bool checkPacket(const vector<int>& receivedPacket, const vector<int>& polynomia
 }
 
 int main(){
-    int size = 26;
+    int size = 500;
     vector<int> packet = generate_random_packet(size);
     cout << "Пакет длиной " << size << " бит: ";
     for (int i : packet){
@@ -50,7 +50,7 @@ int main(){
     cout << endl;
 
     cout << "CRC: ";
-    vector<int> G = {1, 1, 1, 1, 1, 1, 0, 1};
+    vector<int> G = {1, 1, 1, 1, 0, 0, 0, 1};
     vector<int> CRC = computeCRC(packet, G);
 
     for (int i : CRC){
